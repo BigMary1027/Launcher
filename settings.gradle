@@ -10,19 +10,25 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        maven {
-            name = "GithubPackagesRepo"
-            url = "https://maven.pkg.github.com/liu-wanshun/platform_frameworks_base"
-            credentials {
-                /*
-                Github Action 中使用 System.getenv()
-                本地在gradle.properties中声明"gpr.user"和"gpr.key",详见:
-                1:https://docs.gradle.org/current/userguide/build_environment.html#sec:gradle_configuration_properties
-                2:https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-gradle-registry#using-a-published-package
-                **/
-                username = providers.gradleProperty("gpr.user").orNull ?: System.getenv("USERNAME")
-                password = providers.gradleProperty("gpr.key").orNull ?: System.getenv("GITHUB_TOKEN")
+//        maven {
+//            name = "GithubPackagesRepo"
+//            url = "https://maven.pkg.github.com/liu-wanshun/platform_frameworks_base"
+//            credentials {
+//                /*
+//                Github Action 中使用 System.getenv()
+//                本地在gradle.properties中声明"gpr.user"和"gpr.key",详见:
+//                1:https://docs.gradle.org/current/userguide/build_environment.html#sec:gradle_configuration_properties
+//                2:https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-gradle-registry#using-a-published-package
+//                **/
+//                username = providers.gradleProperty("gpr.user").orNull ?: System.getenv("USERNAME")
+//                password = providers.gradleProperty("gpr.key").orNull ?: System.getenv("GITHUB_TOKEN")
+//            }
+//        }
+        maven { ArtifactRepository repo ->
+            if (repo.metaClass.hasProperty(repo, 'allowInsecureProtocol')) {
+                allowInsecureProtocol true
             }
+            url 'http://192.168.31.135:8082/artifactory/icegps-libs/'
         }
         maven { url "https://jitpack.io" }
         maven { url "https://maven.aliyun.com/repository/public" }

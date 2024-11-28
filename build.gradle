@@ -252,7 +252,8 @@ configurations.configureEach {
             cacheDynamicVersionsFor 0, "seconds"
             def targetProject = findProject(":SystemUIShared")
             if (targetProject != null) {
-                substitute module("com.github.liu-wanshun:launcherlib-systemui-shared:13-SNAPSHOT") using project(":SystemUIShared")
+//                substitute module("com.github.liu-wanshun:launcherlib-systemui-shared:13-SNAPSHOT") using project(":SystemUIShared")
+                substitute module("com.icegps.launcherlib:launcherlib-systemui-shared:13-SNAPSHOT") using project(":SystemUIShared")
             }
         }
     }
@@ -265,7 +266,8 @@ dependencies {
     implementation project(':iconloaderlib')
     implementation project(':viewcapturelib')
     implementation("com.github.ChickenHook:RestrictionBypass:2.2")
-    implementation("com.github.liu-wanshun:launcherlib-systemui-shared:13-SNAPSHOT")
+//    implementation("com.github.liu-wanshun:launcherlib-systemui-shared:13-SNAPSHOT")
+    implementation("com.icegps.launcherlib:launcherlib-systemui-shared:13-SNAPSHOT")
     implementation fileTree(dir: "prebuilt", include: 'SystemUI-statsd.jar')
 
 
