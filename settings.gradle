@@ -38,11 +38,11 @@ rootProject.name = "LauncherC"
 include ':iconloaderlib'
 project(':iconloaderlib').projectDir = new File(rootDir, 'platform_frameworks_libs_systemui/iconloaderlib')
 
-include ':searchuilib'
-project(':searchuilib').projectDir = new File(rootDir, 'platform_frameworks_libs_systemui/searchuilib')
-
-include ':viewcapturelib'
-project(':viewcapturelib').projectDir = new File(rootDir, 'platform_frameworks_libs_systemui/viewcapturelib')
+//include ':searchuilib'
+//project(':searchuilib').projectDir = new File(rootDir, 'platform_frameworks_libs_systemui/searchuilib')
+//
+//include ':viewcapturelib'
+//project(':viewcapturelib').projectDir = new File(rootDir, 'platform_frameworks_libs_systemui/viewcapturelib')
 
 final def PLATFORM_FRAMEWORKS_BASE_PATH = "platform_frameworks_base"
 // 加载本地 module, https://github.com/liu-wanshun/platform_frameworks_base

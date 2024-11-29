@@ -149,13 +149,13 @@ android {
             dimension "app"
             applicationId 'com.android.launcher3'
             testApplicationId 'com.android.launcher3.tests'
-        }*/
+        }
 
         withQuickstep {
             dimension "recents"
 
             minSdkVersion 28
-        }
+        }*/
 
         withoutQuickstep {
             dimension "recents"
@@ -208,14 +208,14 @@ android {
             assets.srcDirs "chair/assets"
         }
 
-        chairWithoutQuickstep {
+/*        chairWithoutQuickstep {
             manifest.srcFile "AndroidManifest.xml"
         }
 
         chairWithQuickstep {
             manifest.srcFile "quickstep/AndroidManifest-launcher.xml"
             java.srcDirs = ["chair/quickstep"]
-        }
+        }*/
 
 /*        l3go {
             res.srcDirs = ['go/res']
@@ -235,11 +235,11 @@ android {
             java.srcDirs = ['src_ui_overrides']
         }
 
-        withQuickstep {
+/*        withQuickstep {
             res.srcDirs = ['quickstep/res', 'quickstep/recents_ui_overrides/res']
             java.srcDirs = ['quickstep/src', 'quickstep/recents_ui_overrides/src']
             manifest.srcFile "quickstep/AndroidManifest.xml"
-        }
+        }*/
     }
     //来源：AOSP中编译Launcher3模块,out/soong/.intermediates/frameworks/base/framework/android_common/turbine-combined/framework.jar
     addFrameworkJar('framework-13.jar')
@@ -264,7 +264,7 @@ dependencies {
     implementation libs.androidx.recyclerview.recyclerview
     implementation libs.androidx.preference
     implementation project(':iconloaderlib')
-    implementation project(':viewcapturelib')
+//    implementation project(':viewcapturelib')
     implementation("com.github.ChickenHook:RestrictionBypass:2.2")
 //    implementation("com.github.liu-wanshun:launcherlib-systemui-shared:13-SNAPSHOT")
     implementation("com.icegps.launcherlib:launcherlib-systemui-shared:13-SNAPSHOT")
