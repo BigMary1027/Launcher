@@ -149,13 +149,13 @@ android {
             dimension "app"
             applicationId 'com.android.launcher3'
             testApplicationId 'com.android.launcher3.tests'
-        }
+        }*/
 
         withQuickstep {
             dimension "recents"
 
             minSdkVersion 28
-        }*/
+        }
 
         withoutQuickstep {
             dimension "recents"
@@ -208,14 +208,14 @@ android {
             assets.srcDirs "chair/assets"
         }
 
-/*        chairWithoutQuickstep {
+        chairWithoutQuickstep {
             manifest.srcFile "AndroidManifest.xml"
         }
 
         chairWithQuickstep {
             manifest.srcFile "quickstep/AndroidManifest-launcher.xml"
             java.srcDirs = ["chair/quickstep"]
-        }*/
+        }
 
 /*        l3go {
             res.srcDirs = ['go/res']
